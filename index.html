@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Animaiton</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery3.1.0.min.js"></script>
+</head>
+
+<body>
+    <h2>Input Animation</h2>
+    <div class="form_container">
+        <div class="form_input">
+            <p>Email Address</p>
+            <input type="text" class="input_field">
+        </div>
+        <div class="cta">Submit</div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            $(".form_input").on("focusin", ".input_field", function () {
+                $(this).parent(".form_input").children("p").addClass("pushedUp");
+                $(this).parent(".form_input").addClass("active");
+            });
+            $(".form_input").on("focusout", ".input_field", function () {
+                let inputValue = $(this).val();
+                if (inputValue.length <= 0) {
+                    $(this).parent(".form_input").children("p").removeClass("pushedUp");
+                    $(this).parent(".form_input").removeClass("active");
+                }
+            })
+
+            //thank you for watching
+            //please subscribe my channel;
+        })
+    </script>
+</body>
+
+</html>
